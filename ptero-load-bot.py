@@ -26,7 +26,7 @@ async def update_message():
     server_id: str = discord_client.server_id
     message: Message = discord_client.message
     await message.edit(content=await get_formatted_current_load(server_id))
-    print("Updated Server Info")
+    print(f"Updated Server Info {dt.datetime.today().strftime('%Y-%m-%d %H:%M:%S')}")
 
 
 @discord_client.event
@@ -151,4 +151,7 @@ async def get_server_id() -> tuple[str, int]:
 if __name__ == "__main__":
     # TODO Write tests
     # TODO Proper comments
-    discord_client.run(os.environ["DISCORD_TOKEN"])
+    try:
+        discord_client.run(os.environ["DISCORD_TOKEN"])
+    except KeyboardInterrupt:
+        print("Bot shutting down")
