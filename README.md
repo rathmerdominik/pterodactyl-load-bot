@@ -1,16 +1,20 @@
 # 2gb-pterodactyl-load-bot
-Pterodactyl bot that shows current load and ressource usage of a specified Server.
+Discord bot that shows current load and resource usage of a specified Pterodactyl server.
 
 # Installation
 Clone the repo.
 
 `git clone https://github.com/rathmerdominik/pterodactyl-load-bot.git`
 
+Install dependencies
+
+`pip install -r requirements.txt`
+
 Then you have to create a .env and config.yaml file from the existing dist files.
 
-`cp config.yaml.dist config.yaml`
+`cp config.dist.yaml config.yaml`
 
-`cp .env.dist .env`
+`cp .dist.env .env`
 
 After that you have to define the values inside the .env file.
 
@@ -21,3 +25,8 @@ After that you have to define the values inside the .env file.
 `PTERO_API_KEY` has to be a Pterodactyl User API Key. To get one you can visit this site https://example.com/account/api where example.com is the Domain for your Pterodactyl installation.
 
 `PTERO_SERVER` has to be the Domain of your panel
+
+You can start the bot afterwards with
+
+`python3 ptero-load-bot.py`
+ 
